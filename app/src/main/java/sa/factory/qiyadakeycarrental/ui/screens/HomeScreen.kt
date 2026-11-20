@@ -52,7 +52,8 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: 'OBD-II CAN-Bus Telematics + BLE Digital Key Fob'}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
+                    val peripheralName = state.telemetry?.peripheralName ?: "OBD-II CAN-Bus Telematics + BLE Digital Key Fob"
+                    Text("العتاد الحي: $peripheralName", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
                     Text(state.telemetry?.liveReading ?: "OBD-II CAN 500kbps: RPM 2150 | Boost 2.4bar | BLE Key: Authenticated (RSSI -42dBm)", fontSize = 11.sp, color = BrandTextSecondary)
                 }
                 Badge(containerColor = BrandPrimary) {
